@@ -1,0 +1,2 @@
+### Jun 7 2026 | The plan
+Implement kernels, in CUDA and Triton, starting simple and moving to more complex ones. Have different versions of the same kernel trying out different techniques. Compare performance.
