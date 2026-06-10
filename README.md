@@ -19,3 +19,8 @@ Okay, I can transpose really fast, that's cool but my naive gpu implementation i
 
 ### Jun 10 2026 | Softmax
 Short entry cuz 2AM. Used Triton. Up to 16384 elements per row mine is faster than F.softmax, after that registers spill on my 2080ti. Implementation on tritons website has more tricks will try them tomorrow.
+
+### Jun 10 2026 | Softmax, persistent kernels and occupancy
+Version of softmax calculates register and shared memory usage to calculate occupancy to find "optimal" number of programs and keeps them persistend and uses pipeline staging. I think my 2080ti doesn't support staging though. Version 2 is not really faster. Compared to triton official tutorial one and looks same.
+-   Compare implementations on other GPUs
+-   Online softmax to handle big rows w/o register spilling (Good warm up for flash attention)
